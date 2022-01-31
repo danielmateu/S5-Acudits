@@ -14,14 +14,25 @@
 </head>
 <body>
     <header class="header" id="header">
-        <div class="weather-container"></div>
+        <div class="weather-container">
+            <div class="temperatura-valor" id="temperatura-valor">14ºC</div>
+            <div class="icono-animado" id="icono-animado"><img src="./img/cloudy-day-1.svg" alt=""></div>
+        </div>
     </header>
     <main class='container' id="container">
         
         <div class="joke-container">
             <h3>Ready for a joke?<span>🤣</span></h3>
-            <div class="joke-block" id="joke-bloc"></div>
-            <div class="valoration" id="valoration"></div>
+            <div class="joke-block" id="joke-block"></div>
+            <div class="valoration" id="valoration">
+                <!--
+                <ul>
+                    <li class="bad" id="bad">😒</li>
+                    <li class="meh" id="meh">😐</li>
+                    <li class="good" id="good">😆</li>
+                </ul>  
+                -->
+            </div>
             <button class="btn btn-primary" id="btn">Next Joke!</button>
         </div>
     </main>
