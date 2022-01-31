@@ -1,16 +1,21 @@
-
+//Variables Weather
 const header = document.getElementById('header') as HTMLInputElement;
 const weatherContainer = document.getElementById('weather-container') as HTMLInputElement;
 const temperaturaValor = document.getElementById('temperatura-valor') as HTMLInputElement;
 const iconoAnimado = document.getElementById('icono-animado') as HTMLInputElement;
 
+//Variables container
 const container = document.getElementById('container') as HTMLInputElement;
 const jokeContainer = document.getElementById('joke-container') as HTMLInputElement;
 const jokeBlock = document.getElementById('joke-block') as HTMLInputElement;
+const joke:HTMLElement = document.querySelector('.joke-container')as HTMLElement;
 const valoration = document.getElementById('valoration') as HTMLInputElement;
 const valorationBlock = document.createElement('ul') as HTMLElement;
 valorationBlock.classList.add('ul');
 const btn = document.getElementById('btn') as HTMLInputElement;
+let jokeInfo: MyJoke;
+let reportJokes: MyJoke[] = [];
+let isoDate: string = new Date().toISOString();
 
 valorationBlock.innerHTML = `
 <li><button class="valoration-boton" id="1">😒</button></li>
@@ -31,7 +36,6 @@ class MyJoke{
         (this.date = date);
     }
 }
-
 
 //FUNCIÓ al Clickar el Botó next!
 
@@ -56,6 +60,29 @@ async function getMoreJokes(): Promise<void>{
         jokeBlock.innerText = randomJokes;
         valoration.appendChild(valorationBlock);
 
+        //REPORT SECTION
+
+        let bad:HTMLButtonElement = document.getElementById('1') as HTMLButtonElement;
+
+        let meh:HTMLButtonElement = document.getElementById('2') as HTMLButtonElement;
+
+        let good:HTMLButtonElement = document.getElementById('3') as HTMLButtonElement;
+
+        let arrayVal = [bad,meh,good];
+        arrayVal.filter((val:HTMLButtonElement)=>{
+            val.addEventListener('click',function(){
+                if(val===bad){
+                   jokeInfo = new MyJoke(joke.innerText,1,isoDate); 
+                }if(val===meh){jokeInfo = new MyJoke(joke.innerText,2,isoDate);
+                }if(val===good)jokeInfo = new MyJoke(joke.innerText,3,isoDate); 
+                
+            })
+        });
+        if(jokeInfo !==undefined){
+            reportJokes.push(jokeInfo);
+        }
+        console.log(reportJokes);
+
         
 
     }catch(err){
@@ -66,14 +93,14 @@ async function getMoreJokes(): Promise<void>{
 //WEATHER ACCESS
 
 window.addEventListener('load', () =>{
-    let lon:number|string;
-    let lat:number|string;
+    //let lon:number|string;
+    //let lat:number|string;
 
     let temperaturaValor =<HTMLInputElement>document.getElementById('temperatura-valor');
 
     let iconoAnimado =<HTMLInputElement> document.getElementById('icono-animado');
 
-    let temperaturaDescripcion =<HTMLInputElement>document.getElementById('temperatura');
+    //let temperaturaDescripcion =<HTMLInputElement>document.getElementById('temperatura');
 
     //let ubicacion = <HTMLInputElement>document.getElementById('ubicacion');
     

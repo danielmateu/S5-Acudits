@@ -8,17 +8,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+//Variables Weather
 const header = document.getElementById('header');
 const weatherContainer = document.getElementById('weather-container');
 const temperaturaValor = document.getElementById('temperatura-valor');
 const iconoAnimado = document.getElementById('icono-animado');
+//Variables container
 const container = document.getElementById('container');
 const jokeContainer = document.getElementById('joke-container');
 const jokeBlock = document.getElementById('joke-block');
+const joke = document.querySelector('.joke-container');
 const valoration = document.getElementById('valoration');
 const valorationBlock = document.createElement('ul');
 valorationBlock.classList.add('ul');
 const btn = document.getElementById('btn');
+let jokeInfo;
+let reportJokes = [];
+let isoDate = new Date().toISOString();
 valorationBlock.innerHTML = `
 <li><button class="valoration-boton" id="1">😒</button></li>
 <li><button class="valoration-boton" id="2">😐</button></li>
@@ -54,6 +60,27 @@ function getMoreJokes() {
             //console.log(randomJokes);
             jokeBlock.innerText = randomJokes;
             valoration.appendChild(valorationBlock);
+            //REPORT SECTION
+            let bad = document.getElementById('1');
+            let meh = document.getElementById('2');
+            let good = document.getElementById('3');
+            let arrayVal = [bad, meh, good];
+            arrayVal.filter((val) => {
+                val.addEventListener('click', function () {
+                    if (val === bad) {
+                        jokeInfo = new MyJoke(joke.innerText, 1, isoDate);
+                    }
+                    if (val === meh) {
+                        jokeInfo = new MyJoke(joke.innerText, 2, isoDate);
+                    }
+                    if (val === good)
+                        jokeInfo = new MyJoke(joke.innerText, 3, isoDate);
+                });
+            });
+            if (jokeInfo !== undefined) {
+                reportJokes.push(jokeInfo);
+            }
+            console.log(reportJokes);
         }
         catch (err) {
             console.log('Error', err);
@@ -62,11 +89,11 @@ function getMoreJokes() {
 }
 //WEATHER ACCESS
 window.addEventListener('load', () => {
-    let lon;
-    let lat;
+    //let lon:number|string;
+    //let lat:number|string;
     let temperaturaValor = document.getElementById('temperatura-valor');
     let iconoAnimado = document.getElementById('icono-animado');
-    let temperaturaDescripcion = document.getElementById('temperatura');
+    //let temperaturaDescripcion =<HTMLInputElement>document.getElementById('temperatura');
     //let ubicacion = <HTMLInputElement>document.getElementById('ubicacion');
     //let vientoVelocidad = <HTMLInputElement>document.getElementById('viento-velocidad');
     if (navigator.geolocation) {
