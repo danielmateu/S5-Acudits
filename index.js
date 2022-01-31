@@ -14,6 +14,7 @@ const weatherContainer = document.getElementById('weather-container');
 const temperaturaValor = document.getElementById('temperatura-valor');
 const iconoAnimado = document.getElementById('icono-animado');
 //Variables container
+const body = document.getElementById('body');
 const container = document.getElementById('container');
 const jokeContainer = document.getElementById('joke-container');
 const jokeBlock = document.getElementById('joke-block');
@@ -81,7 +82,7 @@ function getMoreJokes() {
                 reportJokes.push(jokeInfo);
             }
             console.log(reportJokes);
-            container.style.background = backgroundStyle();
+            body.style.background = backgroundStyle();
         }
         catch (err) {
             console.log('Error', err);

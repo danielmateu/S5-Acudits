@@ -5,6 +5,7 @@ const temperaturaValor = document.getElementById('temperatura-valor') as HTMLInp
 const iconoAnimado = document.getElementById('icono-animado') as HTMLInputElement;
 
 //Variables container
+const body = document.getElementById('body') as HTMLInputElement;
 const container = document.getElementById('container') as HTMLInputElement;
 const jokeContainer = document.getElementById('joke-container') as HTMLInputElement;
 const jokeBlock = document.getElementById('joke-block') as HTMLInputElement;
@@ -82,7 +83,7 @@ async function getMoreJokes(): Promise<void>{
             reportJokes.push(jokeInfo);
         }
         console.log(reportJokes);
-        container.style.background = backgroundStyle();
+        body.style.background = backgroundStyle();
         
 
     }catch(err){
