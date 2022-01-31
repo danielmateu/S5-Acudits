@@ -81,6 +81,7 @@ function getMoreJokes() {
                 reportJokes.push(jokeInfo);
             }
             console.log(reportJokes);
+            container.style.background = backgroundStyle();
         }
         catch (err) {
             console.log('Error', err);
@@ -152,3 +153,20 @@ window.addEventListener('load', () => {
         });
     }
 });
+//RANDOM BACKGROUNDS
+function backgroundStyle() {
+    let random = Math.floor(Math.random() * 10) + 1;
+    let background = [
+        'url("./background/blob (6).svg")',
+        'url("./background/blob (7).svg")',
+        'url("./background/blob (8).svg")',
+        'url("./background/blob (9).svg")',
+        'url("./background/blob (10).svg")',
+        'url("./background/blob (11).svg")',
+        'url("./background/blob (12).svg")',
+        'url("./background/blob (13).svg")',
+        'url("./background/blob (14).svg")',
+        'url("./background/blob (15).svg")'
+    ];
+    return background[random].toString();
+}

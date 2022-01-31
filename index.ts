@@ -72,7 +72,7 @@ async function getMoreJokes(): Promise<void>{
         arrayVal.filter((val:HTMLButtonElement)=>{
             val.addEventListener('click',function(){
                 if(val===bad){
-                   jokeInfo = new MyJoke(joke.innerText,1,isoDate); 
+                jokeInfo = new MyJoke(joke.innerText,1,isoDate); 
                 }if(val===meh){jokeInfo = new MyJoke(joke.innerText,2,isoDate);
                 }if(val===good)jokeInfo = new MyJoke(joke.innerText,3,isoDate); 
                 
@@ -82,13 +82,14 @@ async function getMoreJokes(): Promise<void>{
             reportJokes.push(jokeInfo);
         }
         console.log(reportJokes);
-
+        container.style.background = backgroundStyle();
         
 
     }catch(err){
         console.log('Error', err);
     }
 }
+
 
 //WEATHER ACCESS
 
@@ -168,3 +169,22 @@ window.addEventListener('load', () =>{
         })
     }
 });
+
+//RANDOM BACKGROUNDS
+
+function backgroundStyle(){
+    let random = Math.floor(Math.random() *10)+1;
+    let background = [
+        'url("./background/blob (6).svg")',
+        'url("./background/blob (7).svg")',
+        'url("./background/blob (8).svg")',
+        'url("./background/blob (9).svg")',
+        'url("./background/blob (10).svg")',
+        'url("./background/blob (11).svg")',
+        'url("./background/blob (12).svg")',
+        'url("./background/blob (13).svg")',
+        'url("./background/blob (14).svg")',
+        'url("./background/blob (15).svg")'
+    ];
+    return background[random].toString();
+}
