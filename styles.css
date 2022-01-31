@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*-----------WEATHER--------------*/
+
+.header .weather-container{
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    height: fit-content;
+    position:fixed;
+}
+
+/*-----------MAIN--------------*/
+
+.container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+}
+
+.joke-container{
+    display:flex;
+    flex-flow: column wrap;
+    align-items:center;
+    justify-content:center;
+}
+
+.joke-container ul{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    list-style: none;
+    margin-left: -35px;
+}
+
+.valoration-boton{
+    border: none;
+    margin: 15px;
+    background: none;
+}
