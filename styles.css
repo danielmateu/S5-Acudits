@@ -18,9 +18,16 @@ body{
 .header .weather-container{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 15px;
     height: fit-content;
     position:fixed;
+    border-radius:15px;
+    background-color:rgba(65, 64, 64, 0.062);
+}
+
+.temperatura-valor{
+    margin-left: 20px;
 }
 
 /*-----------MAIN--------------*/
@@ -55,5 +62,26 @@ main .container{
 .valoration-boton{
     border: none;
     margin: 15px;
+    border-radius:15px;
     background: none;
+    transition: ease-in .3s;
+    -webkit-transition: ease-in .3s;
+    -moz-transition: ease-in .3s;
+    -ms-transition: ease-in .3s;
+    -o-transition: ease-in .3s;
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    -ms-border-radius:15px;
+    -o-border-radius:15px;
 }
+
+.valoration-boton:hover{
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    
+
+}
+
