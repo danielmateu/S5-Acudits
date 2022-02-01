@@ -9,7 +9,7 @@ const body = document.getElementById('body') as HTMLInputElement;
 const container = document.getElementById('container') as HTMLInputElement;
 const jokeContainer = document.getElementById('joke-container') as HTMLInputElement;
 const jokeBlock = document.getElementById('joke-block') as HTMLInputElement;
-const joke:HTMLElement = document.querySelector('.joke-container')as HTMLElement;
+const joke:HTMLElement = document.querySelector('.joke-block')as HTMLElement;
 const valoration = document.getElementById('valoration') as HTMLInputElement;
 const valorationBlock = document.createElement('ul') as HTMLElement;
 valorationBlock.classList.add('ul');

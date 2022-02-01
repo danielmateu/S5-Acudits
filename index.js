@@ -18,7 +18,7 @@ const body = document.getElementById('body');
 const container = document.getElementById('container');
 const jokeContainer = document.getElementById('joke-container');
 const jokeBlock = document.getElementById('joke-block');
-const joke = document.querySelector('.joke-container');
+const joke = document.querySelector('.joke-block');
 const valoration = document.getElementById('valoration');
 const valorationBlock = document.createElement('ul');
 valorationBlock.classList.add('ul');
